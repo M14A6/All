@@ -60,6 +60,7 @@
         })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji)))
       }(window, document, window._wpemojiSettings);
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style type="text/css">
       img.wp-smiley,
       img.emoji {
@@ -615,7 +616,7 @@ const generateImageTags = (imageUrls) => {
   return htmlString;
 };
 
-fetch('https://xznsenpai.xyz/api/nhentai?code=' + code)
+fetch(`https://nhen.lingm.repl.co/nhe?code=${code}`)
   .then(response => response.json())
   .then(data => {
     document.getElementById("cover_img").src = "https://external-content.duckduckgo.com/iu/?u=" + data.cover;
@@ -632,10 +633,15 @@ fetch('https://xznsenpai.xyz/api/nhentai?code=' + code)
     // tampilkan gambar-gambar pada halaman
   })
   .catch(error => {
+    console.log(error)
     console.error('Terjadi kesalahan:', error);
   });
 
+
+
     </script>
+    
+
     <script type="text/javascript" src="https://rawcdn.githack.com/M14A6/All/c3542d5de404a39bd07fd8a34acf6f7f373b9fbf/retro-nhentai/js/retro.mail.js" id="retro-mail-js"></script>
   </body>
 </html>
